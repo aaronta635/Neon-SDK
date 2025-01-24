@@ -25,6 +25,17 @@ const json_example = {
     "created_at": "2023-11-27T19:07:33.155Z"
   }
 
+// Create database for user
+try {
+    await db.execute(`
+        CREATE DATABASE ${json_example["id"]}
+
+    `);
+}
+catch (error) {
+    console.log(error);
+}
+
 // Create a table
 try {
     await db.execute(`
